@@ -2,60 +2,22 @@ import { Component } from '@angular/core';
 import { IColor } from '../../models/colors.model';
 import { Service } from '../../Service/service';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-hero',
   standalone:true,
-  imports:[CommonModule],
+  imports:[CommonModule,RouterLink],
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
-  constructor(private service: Service) { }
+  constructor(private service: Service, private router: Router) { }
   
     todosLosColores: IColor[] = [];//almacena todos los colores de la api (148)
-    randomColores: any[] = [{
-      "name": "AliceBlue",
-      "theme": "light",
-      "group": "Gray",
-      "hex": "F0F8FF",
-      "rgb": "240,248,255"
-    }, {
-      "name": "AntiqueWhite",
-      "theme": "light",
-      "group": "Gray",
-      "hex": "FAEBD7",
-      "rgb": "250,235,215"
-    },
-    {
-      "name": "Aqua",
-      "theme": "light",
-      "group": "Aqua",
-      "hex": "00FFFF",
-      "rgb": "0,255,255"
-    },
-    {
-      "name": "Aqua",
-      "theme": "light",
-      "group": "Aqua",
-      "hex": "00FFFF",
-      "rgb": "0,255,255"
-    }, {
-      "name": "Aquamarine",
-      "theme": "light",
-      "group": "Aqua",
-      "hex": "7FFFD4",
-      "rgb": "127,255,212"
-    }, {
-      "name": "Azure",
-      "theme": "light",
-      "group": "Gray",
-      "hex": "F0FFFF",
-      "rgb": "240,255,255"
-    }
-    ];
     randomColors: any[] = [];//almacenara colores random para mostrar
-  
+    colorTheme : string = ''
     ngOnInit() {
       this.llamarColores();
     }
@@ -64,7 +26,12 @@ export class HeroComponent {
         next: (data: any) => {
           this.todosLosColores = data.colors
           console.log(this.todosLosColores)
-          this.generarRandomColors();
+          if(data.colors.theme == 'dark'){
+            this.colorTheme = "'#'+000"
+          }else{
+            this.colorTheme = "'#'+fff"
+          }
+          this.generarRandomColors();          
         }
       })
     }
@@ -80,4 +47,5 @@ export class HeroComponent {
       this.generarRandomColors();
   
     }
+    
 }

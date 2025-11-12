@@ -1,14 +1,12 @@
 <!-- ------------------------------------------ -->
+<h1 class="titulo">Todos los colores disponibles que tenemos en la app</h1>
 <div class="hero" id="hero">
-  <div class="hero__container">
-    <div class="hero__container__title">
-      <h1 class="title">Colores</h1>
-      <button class="btn-title" (click)="obtenerColores()">Generar colores</button>
-    </div>
+  <div  class="hero__container">          
     <div class="hero__container__colors">
-        @for (color of randomColors; track color.name) {
-      <div class="swatch" [style.backgroundColor]="'#' + color.hex"><span class="hex">{{color.hex}}</span></div>      
-        }
+        @for (color of todosLosColores; track color.name) {
+      <a class="swatch" [style.backgroundColor]="'#' + color.hex"  [routerLink]="['/detalles', color.name]">
+        <span [style.color]="color.theme === 'dark' ? '#fff' : '#000'" class="hex">#{{color.hex}}</span>
+      </a>}
     </div>
   </div>
 </div>
