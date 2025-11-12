@@ -1,16 +1,15 @@
+<!-- ------------------------------------------ -->
 <div class="hero" id="hero">
   <div class="hero__container">
     <div class="hero__container__title">
-      <h1 class="title">Colores</h1>
-      <button class="btn-title">Generar colores</button>
+      <h2 class="title">Iris</h2>
+      <h2 class="title">Colores</h2>
+      <button class="btn-title" (click)="obtenerColores()">Generar colores</button>
     </div>
     <div class="hero__container__colors">
-      <div class="swatch" style="background:#00c4cc;"><span class="hex">#00c4cc</span></div>
-      <div class="swatch" style="background:#ff738e;"><span class="hex">#ff738e</span></div>
-      <div class="swatch" style="background:#a548ff;"><span class="hex">#a548ff</span></div>
-      <div class="swatch" style="background:#ffa53b;"><span class="hex">#ffa53b</span></div>
-      <div class="swatch" style="background:#6422b8;"><span class="hex">#6422b8</span></div>
-      <div class="swatch" style="background:#ffd93b;"><span class="hex">#ffd93b</span></div>
+        @for (color of randomColors; track color.name) {
+          <div class="swatch" [style.backgroundColor]="'#' + color.hex"># <span class="hex">{{color.hex}}</span></div>      
+        }
     </div>
   </div>
 </div>
