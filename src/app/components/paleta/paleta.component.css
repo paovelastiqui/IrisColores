@@ -11,33 +11,76 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .paleta__container {
-  min-height: 100vh;
   width: 100%;
-  max-width: 1440px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  justify-content: center;
+  display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
 }
 
 .paletaPadre {
-  width: auto;
-  height: auto;
+  
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  /* gap: 1rem;
+  border-radius: 1rem; */
 }
 
 .paletaHija {
-  width: 5rem;
+  /* width: 10rem; */
   height: 15rem;
-  background-color: blue;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
+  display: flex;
+}
+
+.btn-title {
+  color: white;
+  background-color: #3c6ca8;;
+  border:none;
+  padding:14px 28px;
+  border-radius:40px;
+  font-weight:700;
+  font-size: 1.2rem;
+  cursor:pointer;
+  box-shadow: 0 6px 18px rgba(59,111,156,0.12);
+  transition: transform .12s ease, box-shadow .12s ease;
+  text-align: center;
+}
+
+.title {
+  font-size: 60px;
+  letter-spacing: 2px;
+  color: #3c6ca8;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+
+.swatch{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  width: calc(100vh / 6);
+  min-height:calc(100vh / 3);
+  color: white;
+  font-weight: 800;
+  font-size: clamp(18px, 2.2vw, 28px);
+  text-shadow: 2px 4px 9px #343a40;
+  letter-spacing: 1px;
+}
+
+.hex{
+  color: white;
+  font-weight: 800;
+  /* font-size: clamp(18px, 2.2vw, 28px); */
+  font-size: 1.2rem;
+  text-shadow: 2px 4px 9px #343a40;
+  letter-spacing: 1px;
 }

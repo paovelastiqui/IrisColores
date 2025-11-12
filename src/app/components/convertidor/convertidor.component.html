@@ -1,0 +1,34 @@
+<div class="convertidor-container">
+  <h2 class="title">CONVERTIDOR</h2>
+
+  <div class="formatos">
+    
+    <!-- HEX -->
+    <div class="formato">
+      <h3>HEX</h3>
+      <div class="campo">
+        <span class="color-boton" [style.background]="color"></span>
+        <input [(ngModel)]="color" (input)="actualizarColor()" maxlength="7" placeholder="#ffffff"
+        />
+      </div>
+    </div>
+
+    <!-- RGB -->
+    <div class="formato">
+      <h3>RGB</h3>
+      <div class="campo">
+        <span class="color-boton" [style.background]="color"></span>
+        <span>rgb({{ rgb.r }}, {{ rgb.g }}, {{ rgb.b }})</span>
+      </div>
+    </div>
+
+    <!-- HSL -->
+    <div class="formato">
+      <h3>HSL</h3>
+      <div class="campo">
+        <span class="color-boton" [style.background]="color"></span>
+        <span>hsl({{ hsl.h }}, {{ hsl.s }}%, {{ hsl.l }}%)</span>
+      </div>
+    </div>
+  </div>
+</div>

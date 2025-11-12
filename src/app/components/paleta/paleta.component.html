@@ -1,81 +1,16 @@
 <div class="paleta" id="paleta">
   <div class="paleta__title">
     <h2 class="title">PALETA DE COLORES</h2>
-    <button class="btn-title">Generar paletas</button>
+    <button class="btn-title" (click)="obtenerColores()">Generar paleta</button>
   </div>
 
   <div class="paleta__container">
-    
-      <div class="paletaPadre">
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-          </div>
-
-          <div class="paletaPadre">
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-          </div>
-
-          <div class="paletaPadre">
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-          </div>
-
-          <div class="paletaPadre">
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-          </div>
-
-          <div class="paletaPadre">
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-          </div>
-
-          <div class="paletaPadre">
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-          </div>
-
-          <div class="paletaPadre">
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-          </div>
-
-          <div class="paletaPadre">
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-          </div>
-
-          <div class="paletaPadre">
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-            <div class="paletaHija"></div>
-          </div>
+    <div class="paletaPadre">  
+      <div class="paletaHija">
+        @for (color of randomColors; track color.name) {
+          <div class="swatch" [style.backgroundColor]="'#' + color.hex" [style.color]="color.theme === 'dark' ? '#fff' : '#000'">#<span [style.color]="color.theme === 'dark' ? '#fff' : '#000'" class="hex">{{color.hex}}</span></div>      
+        }
+      </div>
     </div>
   </div>
+</div>

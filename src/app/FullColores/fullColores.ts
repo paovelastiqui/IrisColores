@@ -7,13 +7,13 @@ import { RouterLink } from '@angular/router';
 
 
 @Component({
-  selector: 'app-prueba2',
+  selector: 'app-fullColores',
   standalone: true,
   imports: [CommonModule,RouterLink],
-  templateUrl: './prueba2.html',
-  styleUrls: ['./prueba2.css'],
+  templateUrl: './fullColores.html',
+  styleUrls: ['./fullColores.css'],
 })
-export class Prueba2 implements OnInit {
+export class fullColores implements OnInit {
 
   constructor(private service: Service) { }
 

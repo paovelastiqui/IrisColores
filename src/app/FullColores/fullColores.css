@@ -23,7 +23,7 @@ a:hover{
   display: flex;
   justify-content: center;
   align-items: center; 
-  background-color: black;
+  background-color: white;
   padding: 3px;
   
 }
@@ -39,7 +39,7 @@ a:hover{
   display:grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap:1px;
+  
   min-height:100vh;
 }
 
