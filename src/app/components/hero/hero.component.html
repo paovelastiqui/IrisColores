@@ -8,8 +8,12 @@
     </div>
     <div class="hero__container__colors">
         @for (color of randomColors; track color.name) {
-          <div class="swatch" [style.backgroundColor]="'#' + color.hex"># <span class="hex">{{color.hex}}</span></div>      
-        }
+
+      <a class="swatch" [style.backgroundColor]="'#' + color.hex" [routerLink]="['/detalles', color.name]">
+        <span [style.color]="color.theme === 'dark' ? '#fff' : '#000'" class="hex">#{{color.hex}}</span>               
+      </a>      
+      }
+
     </div>
   </div>
 </div>

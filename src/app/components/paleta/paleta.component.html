@@ -8,7 +8,9 @@
     <div class="paletaPadre">  
       <div class="paletaHija">
         @for (color of randomColors; track color.name) {
-          <div class="swatch" [style.backgroundColor]="'#' + color.hex"># <span class="hex">{{color.hex}}</span></div>      
+          <div [routerLink]="['/detalles', color.name]" class="swatch" [style.backgroundColor]="'#' + color.hex">
+            <span [style.color]="color.theme === 'dark' ? '#fff' : '#000'" class="hex">#{{color.hex}}</span>
+          </div>      
         }
       </div>
     </div>

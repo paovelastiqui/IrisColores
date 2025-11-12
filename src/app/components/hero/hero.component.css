@@ -1,3 +1,7 @@
+a{
+  text-decoration: none;
+}
+
 .hero {
   width: 100%;
   display: flex;
@@ -55,6 +59,13 @@
   display:flex;
   align-items:center;
   justify-content:center;
+
+  min-height:calc(100vh / 3);
+}
+
+
+.hex:hover {
+
   position:relative;
   min-height:calc(100vh / 3);
   color: white;
@@ -65,9 +76,10 @@
 }
 
 .hex{
-  color: white;
+  
   font-weight: 800;
   font-size: clamp(18px, 2.2vw, 28px);
   text-shadow: 2px 4px 9px #343a40;
   letter-spacing: 1px;
+
 }
