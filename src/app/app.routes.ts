@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
+import { LandingPageComponent } from './components/landingPage/landingPagecomponent';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'hero', pathMatch: 'full' },
-  { path: 'paleta', loadComponent: () => import('./components/paleta/paleta.component').then(m => m.PaletaComponent) },
-  { path: 'hero', loadComponent: () => import('./components/hero/hero.component').then(m => m.HeroComponent) },
-  { path: 'prueba', loadComponent: () => import('./prueba/prueba').then(m => m.Prueba) },
-  { path: 'prueba2', loadComponent: () => import('./prueba2/prueba2').then(m => m.Prueba2) },
+  // { path: 'paleta', loadComponent: () => import('./components/paleta/paleta.component').then(m => m.PaletaComponent) },
+  // { path: 'hero', loadComponent: () => import('./components/hero/hero.component').then(m => m.HeroComponent) },
+  // { path: 'convertidor', loadComponent: () => import('./components/convertidor/convertidor.component').then(m => m.ConvertidorComponent) },
+  { path: '', component: LandingPageComponent },
   { path: '**', redirectTo: ''}
 ];
