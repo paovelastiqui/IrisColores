@@ -11,9 +11,9 @@ import { CommonModule } from '@angular/common';
 })
 
 export class ConvertidorComponent {
-  color: string = '#1b4b80';
-  rgb = { r: 27, g: 75, b: 128 };
-  hsl = { h: 210, s: 65, l: 30 };
+  color: string = '#ffffff';
+  rgb = { r: 255, g: 255, b: 255 };
+  hsl = { h: 0, s: 0, l: 100 };
 
   actualizarColor() {
     if (/^#([A-Fa-f0-9]{6})$/.test(this.color)) {

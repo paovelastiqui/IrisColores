@@ -1,8 +1,9 @@
-.convertidor-container {
+.convertidor {
   text-align: center;
-  font-family: 'Arial', sans-serif;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   height: auto;
+  padding-top: 5rem;
   padding-bottom: 2rem;
 }
 
@@ -48,7 +49,7 @@ input {
 }
 
 .title {
-  font-size: 60px;
+  font-size: 50px;
   letter-spacing: 2px;
   color: #3c6ca8;
   margin-bottom: 1.5rem;
@@ -57,3 +58,9 @@ input {
   font-family: "Open Sans", sans-serif;
   text-align: center;
 }
+
+@media screen and (max-width: 750px) {
+  .formatos {
+    flex-direction: column;
+    align-items: center; }
+  }
