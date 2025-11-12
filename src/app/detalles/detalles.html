@@ -1,10 +1,26 @@
-<h1>detalles work</h1>
+<div class="detallesCajaContenido">
+    <div class="cajaColor" [style.backgroundColor]="'#' + datosDeColor.hex"></div>
 
+    <div class="informacionDeColor">
+        <h1 class="nombreColor">{{ datosDeColor.name }}</h1>
+        <p><strong>Tema:</strong> {{ datosDeColor.theme }}</p>
+        <p><strong>Grupo:</strong> {{ datosDeColor.group }}</p>
+        <p><strong>HEX:</strong> #{{ datosDeColor.hex }}</p>
+        <p><strong>RGB:</strong> ({{ datosDeColor.rgb }})</p>
 
-
-<p>nombre de color: {{datosDeColor.name}}</p>
-<p>tema de color: {{datosDeColor.theme}}</p>
-<p>Estara en el grupo de: {{datosDeColor.group}}</p>
-<p>En colores hex sera: {{datosDeColor.hex}}</p>
-<p>En colores rgb sera: {{datosDeColor.rgb}}</p>
-
+        <div class="botonesContenido">
+            <div>
+                <button class="boton" (click)="copiarHex(datosDeColor.hex)">Copiar HEX</button>
+                @if(mensajeHex){
+                <p>¡copiado!</p>
+                }
+            </div>            
+            <div>
+                <button class="boton" (click)="copiarRgb(datosDeColor.rgb)">Copiar RGB</button>
+                @if(mensajeRgb){
+                <p>¡copiado!</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

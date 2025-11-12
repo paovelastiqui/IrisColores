@@ -4,9 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f8f9fa;
-  position: fixed;
-  z-index: 1000;}
+  background-color: #f8f9fa;  
+}
 
 .container-fluid {
   max-width: 1440px; }
