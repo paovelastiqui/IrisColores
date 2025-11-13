@@ -1,6 +1,7 @@
 <div class="contenidoEntero">
     <div>
-        <h2 class="titulo">Contacto</h2>
+        <h2 class="titulo">¡Contactanos!</h2>
+        
     </div>
     <div class="contenidoFormulario">
         <form [formGroup]="miFormulario" (ngSubmit)="enviar()">
@@ -22,7 +23,6 @@
                     [ngClass]="{'is-invalid': mostrarErrores('apellido', 'required') || mostrarErrores('apellido', 'minlength')}"
                     autocomplete="off">
             </div>
-
             @if (mostrarErrores('apellido', 'required')) {
             <div class="textoAdvertencia">Apellido requerido</div>
             }
@@ -30,7 +30,23 @@
             @if (mostrarErrores('apellido', 'minlength')) {
             <div class="textoAdvertencia">Mínimo tres caracteres</div>
             }
+            <!-- -------------------- -->
             <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-input" id="email" formControlName="email"
+                    [ngClass]="{'is-invalid': mostrarErrores('email', 'required') || mostrarErrores('email', 'email')}"
+                    autocomplete="off" />
+                @if (mostrarErrores('email', 'required')) {
+                <div class="textoAdvertencia">Email requerido</div>
+                }
+                @if (mostrarErrores('email', 'email')) {
+                <div class="textoAdvertencia">Formato de email inválido</div>
+                }
+            </div>
+
+
+            <!-- ------------------------ -->
+            <!-- <div class="mb-3">
                 <label for="edad" class="form-label">Edad</label>
                 <input type="number" class="form-input" id="edad" formControlName="edad" [ngClass]="{
                 'is-invalid': mostrarErrores('edad', 'required') || mostrarErrores('edad', 'min')}" autocomplete="off"
@@ -41,31 +57,34 @@
             }
             @if (mostrarErrores('edad', 'min')) {
             <div class="textoAdvertencia">Tiene que tener al menos 18 años</div>
-            }
+            } -->            
+            <!-- ---------------- -->
             <div class="mb-3">
-                <label for="tipoDni" class="form-label">Tipo Documento</label>
-                <select name="tipoDni" class="form-select" id="tipoDni" formControlName="tipoDni">
-                    <option value="" disabled selected>Seleccionar</option>
-                    <option value="DNI">DNI</option>
-                    <option value="Pasaporte">Pasaporte</option>
-                    <option value="Cedula">Cédula</option>
-                </select>
-                @if (mostrarErrores('tipoDni', 'required')) {
-                <div class="textoAdvertencia">Debe seleccionar un tipo de documento</div>
+                <label for="asunto" class="form-label">Asunto</label>
+                <input type="text" class="form-input" id="asunto" formControlName="asunto"
+                    [ngClass]="{'is-invalid': mostrarErrores('asunto', 'required') || mostrarErrores('asunto', 'minlength')}"
+                    autocomplete="off" />
+                @if (mostrarErrores('asunto', 'required')) {
+                <div class="text-danger">Asunto requerido</div>
+                }
+                @if (mostrarErrores('asunto', 'minlength')) {
+                <div class="text-danger">Mínimo tres caracteres</div>
                 }
             </div>
+
+            <!-- Mensaje -->
             <div class="mb-3">
-                <label for="dni" class="form-label">{{labelDocumento}}</label>
-                <input type="text" class="form-input" id="dni" name="dni" formControlName="dni" [ngClass]="{
-                'is-invalid': mostrarErrores('dni', 'required') || mostrarErrores('dni', 'minlength')}"
-                    autocomplete="off">
-            </div>
-            @if (mostrarErrores('dni', 'required')) {
-            <div class="textoAdvertencia">Documento requerido</div>
-            }
-            @if (mostrarErrores('dni', 'minlength')) {
-            <div class="textoAdvertencia">Mínimo siete caracteres</div>
-            }
-            <button type="submit" class="botonEnviar">Enviar</button>
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-input" id="mensaje" rows="4" formControlName="mensaje"
+                    [ngClass]="{'is-invalid': mostrarErrores('mensaje', 'required') || mostrarErrores('mensaje', 'minlength')}"></textarea>
+                @if (mostrarErrores('mensaje', 'required')) {
+                <div class="textoAdvertencia">Mensaje requerido</div>
+                }
+                @if (mostrarErrores('mensaje', 'minlength')) {
+                <div class="textoAdvertencia">Debe tener al menos 10 caracteres</div>
+                }
+             </div>
+                <!-- ---------------------- -->
+                <button type="submit" class="botonEnviar">Enviar</button>
         </form>
     </div>

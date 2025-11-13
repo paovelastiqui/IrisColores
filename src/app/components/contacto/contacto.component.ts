@@ -19,9 +19,9 @@ export class ContactoComponent {
     this.miFormulario = _fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3)]],
       apellido: ['', [Validators.required, Validators.minLength(3)]],
-      edad: ['', [Validators.required, Validators.min(18)]],
-      tipoDni: ['', Validators.required],
-      dni: ['', [Validators.required, Validators.minLength(7)]]
+      email: ['', [Validators.required, Validators.email]],      
+      asunto: ['', [Validators.required, Validators.minLength(3)]],
+      mensaje: ['', [Validators.required, Validators.minLength(10)]],
     })
   }
 
