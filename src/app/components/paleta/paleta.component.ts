@@ -3,7 +3,6 @@ import { IColor } from '../../models/colors.model';
 import { Service } from '../../Service/service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-
 @Component({
   selector: 'app-paleta',
   standalone:true,
@@ -24,7 +23,6 @@ export class PaletaComponent {
       this.service.getFullColors().subscribe({
         next: (data: any) => {
           this.todosLosColores = data.colors
-          console.log(this.todosLosColores)
           this.generarRandomColors();
         }
       })

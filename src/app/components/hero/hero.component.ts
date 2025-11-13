@@ -25,7 +25,7 @@ export class HeroComponent {
       this.service.getFullColors().subscribe({
         next: (data: any) => {
           this.todosLosColores = data.colors
-          console.log(this.todosLosColores)
+          
           if(data.colors.theme == 'dark'){
             this.colorTheme = "'#'+000"
           }else{

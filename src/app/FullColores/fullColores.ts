@@ -27,10 +27,7 @@ export class fullColores implements OnInit {
   llamarColores() {
     this.service.getFullColors().subscribe({
       next: (data: any) => {          
-        this.todosLosColores = data.colors 
-        
-        
-        console.log(this.todosLosColores)        
+        this.todosLosColores = data.colors                
       },error: (error) => {
         console.error(error)
       }
