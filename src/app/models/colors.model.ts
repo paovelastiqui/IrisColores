@@ -1,11 +1,3 @@
-// export interface ILista {
-//     status: number;
-//     statusText: string;
-//     message: string;
-//     count: number;
-//     colors: Color[];
-// }
-
 export interface IColor {
     name: string;
     theme: Theme;

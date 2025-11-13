@@ -18,16 +18,13 @@ export class ContactoComponent {
 
     this.miFormulario = _fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3)]],
+
       apellido: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],      
+
       asunto: ['', [Validators.required, Validators.minLength(3)]],
       mensaje: ['', [Validators.required, Validators.minLength(10)]],
     })
-  }
-
-  get labelDocumento() {
-    const tipo = this.miFormulario.get('tipoDni')?.value;
-    return tipo? `Número de ${tipo}` : ''
   }
 
   enviar() {

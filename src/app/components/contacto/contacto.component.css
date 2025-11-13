@@ -19,6 +19,7 @@
   text-align: center;
 }
 
+
 /* todo el formulario, diseño e interaccion */
 .contenidoFormulario {
   background-color: #fff;
@@ -32,6 +33,7 @@
 .contenidoFormulario:hover {
   transform: scale(1.05,1.05);
 }
+
 
 /* campos que tendra el formulario e inputs */
 .form-label { /*titulos de los label*/
