@@ -3,11 +3,16 @@
     <h2 class="title">PALETA DE COLORES</h2>
     <button class="btn-title" (click)="obtenerColores()">Generar paleta</button>
   </div>
-    <div class="paletaContenedor">
-      @for (color of randomColors; track color.name) {
-      <div [routerLink]="['/detalles', color.name]" class="swatch" [style.backgroundColor]="'#' + color.hex">
-        <span [style.color]="color.theme === 'dark' ? '#fff' : '#000'" class="hex">#{{color.hex}}</span>
+
+  <div class="paleta__container">
+    <div class="paletaPadre">  
+      <div class="paletaHija">
+        @for (color of randomColors; track color.name) {
+          <div [routerLink]="['/detalles', color.name]" class="swatch" [style.backgroundColor]="'#' + color.hex">
+            <span [style.color]="color.theme === 'dark' ? '#fff' : '#000'" class="hex">#{{color.hex}}</span>
+          </div>      
+        }
       </div>
-      }
     </div>
+  </div>
 </div>
